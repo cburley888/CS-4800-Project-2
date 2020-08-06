@@ -1,20 +1,24 @@
 import numpy
 from numpy import array
 import nltk
-from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
+from nltk.corpus import gutenberg
 
-ps = PorterStemmer()
+persuasion = gutenberg.raw('austen-persuasion.txt')
+print(persuasion)
+
+lm = WordNetLemmatizer()
 tk = RegexpTokenizer(r'\w+')
 stopWords = set(stopwords.words('english'))
-testSentence = "I am searching. I have searched. You will search. You will be looking, as I have looked."
-testSentenceLower = testSentence.lower()
+
+persuasionLower = persuasion.lower()
 uniqueTokens = set()
 
-testWordsTokenized = tk.tokenize(testSentenceLower)
+testWordsTokenized = tk.tokenize(persuasionLower)
 testWordStop = [word for word in testWordsTokenized if word not in stopWords]
-testWordStem = [ps.stem(word) for word in testWordStop]
+testWordStem = [lm.lemmatize(word) for word in testWordStop]
 testWordUnique = array([])
 for word in testWordStem:
     if word not in uniqueTokens:
