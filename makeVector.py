@@ -7,13 +7,9 @@ import uniqueTokenFilter
 np.set_printoptions(threshold=sys.maxsize)
 
 
-def make_vector(document, vocabList):
+def make_vector(documentTokens, vocabList):
     doc_vector = np.zeros(len(vocabList))
-    documentTokenized = tokenizer.tokenizer(document)
-    documentStopWord = stopWordRemover.stopwordremover(documentTokenized)
-    documentStemmed = stemmer.stemmer(documentStopWord)
-    document_filtered = [word for word in documentStemmed if word in vocabList]
-    for word in document_filtered:
+    for word in documentTokens:
         doc_vector[vocabList[word]] += 1
     """for word in vocabList:
         print(word)"""
