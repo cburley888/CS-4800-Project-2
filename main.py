@@ -29,4 +29,3 @@ document02_vector = makeVector.make_vector(testSentence02, vocabulary)
 """
 """similarity = cosineSimilarity.cosine_similarity(document01_vector, document02_vector)"""
 print(vocabulary)
-print(similarity)
