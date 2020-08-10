@@ -11,9 +11,6 @@ import uniqueTokenFilter
 import docProcessing
 import tfidf_weighting
 
-"""testSentence01 = "I am searching. I have searched. You will search. You will be looking, as I have looked."
-testSentence02 = "Look around and you will see, a world of true tranquility. Searching far, searched it wide, it is the search that all abide."
-testSentence02 = "Back again, I can wait to get on the road again, back again, like frodo baggins?"""
 
 vocabString = createVocabString.createvocabstring()
 vocabulary = vocabCreator.vocabcreator(vocabString)
