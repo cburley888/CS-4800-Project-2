@@ -9,7 +9,6 @@ np.set_printoptions(threshold=sys.maxsize)
 
 def make_vector(document, vocabList):
     doc_vector = np.zeros(len(vocabList))
-    print(doc_vector)
     documentTokenized = tokenizer.tokenizer(document)
     documentStopWord = stopWordRemover.stopwordremover(documentTokenized)
     documentStemmed = stemmer.stemmer(documentStopWord)
