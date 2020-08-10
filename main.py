@@ -16,16 +16,26 @@ queryVector = makeVector.make_vector(query, vocabulary)
 docs = []
 docVectors = []
 similarityScores = []
-
+i = 0
 for w in gutenberg.fileids():
-    docs[w] = gutenberg.raw(w)
-    docVectors[w] = makeVector.make_vector(docs[w], vocabulary)
-    similarityScores[w] = cosineSimilarity(queryVector, docVectors[w])
+    docs.append(gutenberg.raw(w))
+    docVectors.append(makeVector.make_vector(docs[i], vocabulary))
+    similarityScores.append(cosineSimilarity.cosine_similarity(queryVector, docVectors[i]))
+    i += 1
 
+docWeights = {}
+j = 0
+for w in gutenberg.fileids():
+    docWeights.update({w: similarityScores[j]})
+    j += 1
+
+docWeightsSorted = sorted(docWeights.items(), key=lambda x: x[1], reverse=True)
+print(similarityScores)
+print(docWeightsSorted)
 """document01 = gutenberg.raw('austen-persuasion.txt')
 document02 = gutenberg.raw('austen-sense.txt')
 document01_vector = makeVector.make_vector(testSentence01, vocabulary)
 document02_vector = makeVector.make_vector(testSentence02, vocabulary)
 """
 """similarity = cosineSimilarity.cosine_similarity(document01_vector, document02_vector)"""
-print(vocabulary)
+"""print(vocabulary)"""
