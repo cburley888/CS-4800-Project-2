@@ -8,8 +8,8 @@ def vocabcreator(string):
     lower = string.lower()
     tokenized = tokenizer.tokenizer(lower)
     stopwords = stopWordRemover.stopwordremover(tokenized)
-    stem = stemmer.stemmer(stopwords)
-    unique_tokens = uniqueTokenFilter.uniquetokenfilter(stem)
+    """stem = stemmer.stemmer(stopwords)"""
+    unique_tokens = uniqueTokenFilter.uniquetokenfilter(stopwords)
     vocab = {}
     i = 0
     for word in unique_tokens:

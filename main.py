@@ -15,7 +15,7 @@ import tfidf_weighting
 vocabString = createVocabString.createvocabstring()
 vocabulary = vocabCreator.vocabcreator(vocabString)
 
-query = gutenberg.raw('austen-emma.txt')
+query = input("Enter query: ")
 queryTokens = docProcessing.process_doc(query, vocabulary)
 queryVector = makeVector.make_vector(queryTokens, vocabulary)
 docs = []
