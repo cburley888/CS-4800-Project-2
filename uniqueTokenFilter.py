@@ -1,5 +1,6 @@
 import numpy
 
+"""This function returns an array with only unique terms that were contained in a given array"""
 def uniquetokenfilter(array):
     uniquetokens = set()
     returnarray = []

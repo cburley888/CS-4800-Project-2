@@ -6,7 +6,7 @@ import stopWordRemover
 import uniqueTokenFilter
 np.set_printoptions(threshold=sys.maxsize)
 
-
+"""This function creates a term frequency vector given a list of document tokens"""
 def make_vector(documentTokens, vocabList):
     doc_vector = np.zeros(len(vocabList))
     for word in documentTokens:

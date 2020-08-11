@@ -5,7 +5,7 @@ import stopWordRemover
 import uniqueTokenFilter
 from nltk.corpus import gutenberg
 
-
+"""This function returns the frequency of documents that a term appears in"""
 def doc_frequency(doc_tokens_list, vocabList):
     doc_freq_vector = np.zeros(len(vocabList))
     i = 0

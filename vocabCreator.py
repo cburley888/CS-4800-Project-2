@@ -3,7 +3,7 @@ import tokenizer
 import stopWordRemover
 import uniqueTokenFilter
 
-
+"""This function creates a vocabulary of unique terms given a string"""
 def vocabcreator(string):
     lower = string.lower()
     tokenized = tokenizer.tokenizer(lower)

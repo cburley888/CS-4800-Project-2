@@ -1,7 +1,7 @@
 import numpy
 from numpy import log
 
-
+"""This function returns a vector of td-idf weights"""
 def tfidf_weighting(term_freq_vector, doc_freq_vector, doc_list):
     tfidf_vector = []
     i = 0
